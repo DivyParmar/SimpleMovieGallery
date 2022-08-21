@@ -19,6 +19,7 @@ class MovieDetailsActivity : AppCompatActivity(), View.OnClickListener {
 
         initData()
 
+
         settingClickListener()
     }
 
