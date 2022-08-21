@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Simple Gallery</string>
+    <string name="sign_in">Sign In</string>
+    <string name="email">Email</string>
+    <string name="sign_in_with_google_to_see_gallery">Sign in with Google to see the gallery.</string>
+    <string name="web_client_id">542291264591-lopfn2rmjpuig9k5t3kcgljqi0sejle1.apps.googleusercontent.com</string>
+    <string name="my_profile">My Profile -></string>
+    <string name="logout">Logout</string>
+    <string name="continue_with_google">CONTINUE WITH GOOGLE</string>
+    <string name="simple_gallery">Simple Gallery</string>
+    <string name="no_internet">It appears that your network is down, please check and try again later</string>
+</resources>

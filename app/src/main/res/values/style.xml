@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="transparentDialog" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.50" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>
