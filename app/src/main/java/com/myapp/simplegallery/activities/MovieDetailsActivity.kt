@@ -34,6 +34,7 @@ class MovieDetailsActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
+
     private fun settingClickListener(){
         binding.imageViewBack.setOnClickListener(this)
     }

@@ -14,6 +14,8 @@ import com.myapp.simplegallery.database.MoviesTable
 import com.myapp.simplegallery.database.Repository
 import com.myapp.simplegallery.database.ViewModelFactory
 import com.myapp.simplegallery.databinding.ActivityGalleryBinding
+import com.myapp.simplegallery.extentions.isOnline
+import com.myapp.simplegallery.extentions.noInternetDialog
 import com.myapp.simplegallery.interfaces.Dao
 import com.myapp.simplegallery.interfaces.GalleryClickListener
 import com.myapp.simplegallery.interfaces.RetrofitService
@@ -73,7 +75,14 @@ class GalleryActivity : AppCompatActivity(), View.OnClickListener {
 
         appViewModel.resultMoviesTable.observe(this, Observer {
             if (it.isEmpty()){
-                appViewModel.getAllMovies()
+                if (isOnline()){
+                    appViewModel.getAllMovies()
+                }
+                else{
+                    noInternetDialog {
+                        finish()
+                    }
+                }
             }
             else{
                 moviesList.clear()

@@ -9,7 +9,6 @@ import com.myapp.simplegallery.models.MoviesModelItem
 @Dao
 interface Dao {
 
-    //createNewWheel Table
     @Insert
     fun insertInMoviesTable(moviesTable: MoviesTable): Long
 

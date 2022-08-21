@@ -19,53 +19,9 @@ import java.io.File
 
 
 
-fun getFilePath(context: Context, uri: Uri?): String? {
-    var cursor: Cursor? = null
-    val projection = arrayOf(
-        MediaStore.MediaColumns.DISPLAY_NAME
-    )
-    try {
-        cursor = context.contentResolver.query(
-            uri!!, projection, null, null,
-            null
-        )
-        if (cursor != null && cursor.moveToFirst()) {
-            val index = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME)
-            return cursor.getString(index)
-        }
-    } finally {
-        cursor?.close()
-    }
-    return null
-}
-
-fun Context.getFileInCache(fileName: String, folderName: String): File {
-    val file: File
-    val filePath = File(this.cacheDir, folderName)
-    file = File(filePath, "$fileName")
-    file.parentFile.mkdirs()
-    return file
-}
-
 fun Context.getFileInFiles(fileName: String, folderName: String): File {
     val file: File
     val filePath = File(this.filesDir, folderName)
-    file = File(filePath, "$fileName")
-    file.parentFile.mkdirs()
-    return file
-}
-
-fun Context.isFileAvailableInFiles(fileName: String,folderName: String):Boolean{
-    val file: File
-    val filePath = File(this.filesDir, folderName)
-    file = File(filePath, "$fileName")
-    file.parentFile.mkdirs()
-    return file.exists()
-}
-
-fun Context.getFileFromCache(fileName: String): File {
-    val file: File
-    val filePath = File(this.cacheDir.path)
     file = File(filePath, "$fileName")
     file.parentFile.mkdirs()
     return file
